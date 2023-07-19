@@ -64,12 +64,12 @@ font-family: 'Lora', serif;
 letter-spacing: 2px;`;
 
 
-const Desc = styled.p`
-margin: 50px 0;
-font-size: 25px;
-font-weight: 500;
-font-family: 'Lora', serif;
-letter-spacing: 2px;`;
+// const Desc = styled.p`
+// margin: 50px 0;
+// font-size: 25px;
+// font-weight: 500;
+// font-family: 'Lora', serif;
+// letter-spacing: 2px;`;
 
 const Button = styled.button`
 padding: 10px;
@@ -104,12 +104,12 @@ padding: 10px;
             <Slide bg= {item.bg}>
   
             <ImgContainer>
-              <Image src={item.img}/>
+              <Image src={item.img} width={800}/>
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button>SHOP NOW</Button>
+              {/* <Desc>{item.desc}</Desc> */}
+              <Button>CONTINUE SHOPPING</Button>
             </InfoContainer>
             </Slide>
             )

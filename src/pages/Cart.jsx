@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
 import Anouncement from "./Anouncement";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom"
+import { useState } from "react";
 
 const Container = styled.div``;
 
@@ -128,8 +130,22 @@ const SummaryItemText = styled.span`
 const SummaryItemPrice = styled.span`
   font-weight: 300;
 `;
-
+ 
 const Cart = () => {
+
+  const navigate = useNavigate();
+  const[quantity, setQuantity] = useState(1);
+  const handleClick = () =>{
+    navigate('/');
+  }
+  const handlequantity = (type)=>{
+    if(type==="add"){
+      setQuantity(quantity+1);
+    }
+    else if(type==="subtract"){
+       quantity>1 && setQuantity(quantity-1);
+    }
+  }
   return (
     <Container>
       <Anouncement />
@@ -137,7 +153,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>Continue Shopping</TopButton>
+          <TopButton onClick={handleClick}>Continue Shopping</TopButton>
           <Toptexts>
             <Toptext>Shopping Bag(2)</Toptext>
             <Toptext>Your Wishlist(0)</Toptext>
@@ -165,7 +181,7 @@ const Cart = () => {
 
               <Pricedetail>
                 <ProductAmountContainer>
-                  <svg
+                  <svg  onClick={()=>handlequantity('add')}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -178,8 +194,8 @@ const Cart = () => {
                       d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
                     />
                   </svg>
-                  <ProductAmount>2</ProductAmount>
-                  <svg
+                  <ProductAmount>{quantity}</ProductAmount>
+                  <svg   onClick={()=>handlequantity('subtract')}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -218,7 +234,7 @@ const Cart = () => {
 
               <Pricedetail>
                 <ProductAmountContainer>
-                  <svg
+                  <svg onClick={()=>handlequantity('add')}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -231,8 +247,8 @@ const Cart = () => {
                       d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
                     />
                   </svg>
-                  <ProductAmount>1</ProductAmount>
-                  <svg
+                  <ProductAmount>{quantity}</ProductAmount>
+                  <svg  onClick={()=>handlequantity('subtract')}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"

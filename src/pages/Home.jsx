@@ -1,8 +1,9 @@
 import React from 'react'
 import Categories from '../components/Categories'
 import Footer from '../components/Footer'
+import Itemlist from '../components/Itemlist'
 import Newsletter from '../components/Newsletter'
-import Products from '../components/Products'
+// import Products from '../components/Products'
 import Slider from '../components/Slider'
 import Anouncement from './Anouncement'
 import Navbar from './Navbar'
@@ -14,7 +15,8 @@ const Home = () => {
       <Navbar/>
       <Slider/>
       <Categories/>
-      <Products/>
+      {/* <Products/> */}
+      <Itemlist/>
       <Newsletter/>
       <Footer/>
     </div>

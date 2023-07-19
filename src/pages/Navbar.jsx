@@ -1,10 +1,13 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import { useState } from "react";
 
 const Container = styled.div`
   height: 66px;
-  background-color: #e8d3e2;
+  background-color: #787a79;
 `;
 
 const Wrapper = styled.div`
@@ -29,68 +32,96 @@ const Center = styled.div`
   // align-items: center;
 `;
 
-const SearchContainer = styled.div`
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
-`;
 
-const Input = styled.input`
-  border: none;
-  padding: 7px;
-  margin-right: 4px;
-  border-radius: 3px;
+
+
+const Button = styled.button`
+padding : 10px;
+border-radius: 10px;
+background-color:  #0a0a0a;
+font-size: 15px;
+font-weight: bold;
+color: white;
+cursor : pointer;
+// s:hover{
+//   background-color:  #0a0a0a;
+//   font-size: 17px;
+//   color: white;
+// }
 `;
 
 const Logo = styled.span`
   font-weight: bold;
   text-align: center;
   font-size: 26px;
-  color: #750654;
-  margin-left: 220px;
+  color: #0a0a0a;
+  margin-left: 180px;
+  margin-top:8px;
+  font-weight:800;
   font-family: 'Roboto Slab', serif;
   
 `;
 
 const Menuitem = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   margin-left: 25px;
-  font-weight: 400;
+  font-weight: 500;
 `;
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+  // const [text, setText] = useState("view menu");
+  // const handleClick = () =>{
+
+    
+  //     if(text==="view menu"){
+  //       setText("Back") ;
+  //       navigate('/ProductList')   ;
+  //     }
+  //     else if(text==="Back"){
+  //       setText("view menu") ;
+  //       navigate('/')   ;
+  //     }
+    
+    
+   
+  // }
+
+  const handlebutton = (type) => {
+    if(type==="register"){
+      navigate('/Register');
+    }
+    else if(type==="login"){
+      navigate('/Login');
+    }
+
+    else if(type==='cart'){
+      navigate('/Cart');
+    }
+
+  }
+  
+
   return (
     <Container>
       <Wrapper>
         <Left>
           
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-            {/* <Search/> */}
-            {/* <SearchTwoToneIcon/> */}
-          </SearchContainer>
+        
+            
+            
+            <Button >Menu</Button>
+         
         </Left>
         <Center>
           <Logo>FASHION MART</Logo>
         </Center>
         <Right>
-          <Menuitem>REGISTER</Menuitem>
-          <Menuitem>SIGN IN</Menuitem>
-          <Menuitem>
+          <Menuitem onClick={()=>handlebutton('register')}>REGISTER</Menuitem>
+          <Menuitem onClick={()=>handlebutton('login')}>SIGN IN</Menuitem>
+          <Menuitem onClick={()=>handlebutton('cart')}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
