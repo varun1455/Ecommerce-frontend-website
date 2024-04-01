@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
-import Anouncement from "./Anouncement";
-import Navbar from "./Navbar";
+import Anouncement from "../components/Anouncement";
+import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 

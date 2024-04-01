@@ -10,7 +10,7 @@ display: flex;
 background-color : black;
 margin-top: 20px;
 height: 400px;
-padding: 20px;
+padding: 16px;
 justify-content: space-between;
 `;
 
@@ -32,33 +32,33 @@ background-image: url("jon-ly-Xn7GvimQrk8-unsplash.jpg");
 
 
   const Button1 = styled.button`
-  // position: absolute;
-  top: 50%;
+  position: relative;
+  top: -10%;
   left: 50%;
   transform: translate(50%, 245%);
   -ms-transform: translate(-50%, -50%);
   background-color: #0a0a0a;
   color: white;
   font-size: 38px;
-  padding: 16px 24px;
+  padding: 16px 16px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  border-radius: 5px;`;
+  border-radius: 8px;`;
 
-  const Button2 = styled.button`
-  top: 50%;
-  left: 50%;
-  transform: translate(50%, 245%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #0a0a0a;
-  color: white;
-  font-size: 38px;
-  padding: 16px 24px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;`;
+  // const Button2 = styled.button`
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(50%, 245%);
+  // -ms-transform: translate(-50%, -50%);
+  // background-color: #0a0a0a;
+  // color: white;
+  // font-size: 38px;
+  // padding: 16px 24px;
+  // font-weight: 600;
+  // border: none;
+  // cursor: pointer;
+  // border-radius: 5px;`;
 
 const Categories = () => {
 
@@ -68,19 +68,16 @@ const Categories = () => {
    navigate('/ProductList');
   }
 
-  const handleclicks = ()=>{
-    // const navigate = useNavigate();
-   navigate('/ProductList');
-  }
+
 
   return (
     
     <Container>
       <Box1>
-        <Button1 onClick={handleclick}>Men Collection</Button1>
+        <Button1 onClick={handleclick}>Explore Collections</Button1>
       </Box1>
       <Box2>
-      <Button2 onClick={handleclicks}>Women Collection</Button2>
+     
       </Box2>
     </Container>
   )
@@ -88,6 +85,3 @@ const Categories = () => {
 
 export default Categories
 
-{/* //     {categories.map((item)=>(
-//         <Categoryitem item = {item} key = {item.id}/>
-//     ))} */}

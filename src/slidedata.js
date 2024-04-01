@@ -3,14 +3,14 @@ export const slideritems = [
         id: 1,
         img : "freestocks-_3Q3tsJ01nc-unsplash.jpg",
         title: "SUMMER SALE ARRIVAL SOON",
-        // desc: "NEW DEALS COMMING SOON!!",
+      
         bg: "#bdbfbe",
     },
     {
         id: 2,
         img : "austin-wade-d2s8NQ6WD24-unsplash.jpg",
         title: "NEW COLLECTION",
-        // desc: "GET 20% FLAT DISCOUNT ON CLOTHES!!",
+      
         bg: "#bdbfbe",
 
     },
@@ -18,29 +18,29 @@ export const slideritems = [
         id: 3,
         img : "jade-aucamp-Kj6LgGceZ4M-unsplash.jpg",
         title: "NEW DEALS COMMING VERY SOON",
-        // desc: "GET UPTO 15% DISCOUNT ON FOOTWEAR ABOVE SHOPPING OF $50!!",
+       
         bg: "#bdbfbe",
     }
 ]
 
-// export const categories = [
-//     {
-//         id: 1,
-//         img: "1b3723315e644e51639e6de5d7ff391c.jpg",
-//         title: "JACKETS COLLECTION",
-//     },
-//     {
-//         id: 2,
-//         img: "istockphoto-1148893542-612x612.jpg",
-//         title: "JEANS COLLECTION",
-//     },
-//     {
-//         id: 3,
-//         img: "nike-kyrie-5-black-history-month-ci7894-100_1.jpg",
-//         title: "JORDANS COLLECTION",
-//     }
+export const categories = [
+    {
+        id: 1,
+        img: "1b3723315e644e51639e6de5d7ff391c.jpg",
+        title: "JACKETS COLLECTION",
+    },
+    {
+        id: 2,
+        img: "istockphoto-1148893542-612x612.jpg",
+        title: "JEANS COLLECTION",
+    },
+    {
+        id: 3,
+        img: "nike-kyrie-5-black-history-month-ci7894-100_1.jpg",
+        title: "JORDANS COLLECTION",
+    }
 
-// ]
+]
 
 
 export const diffproducts = [

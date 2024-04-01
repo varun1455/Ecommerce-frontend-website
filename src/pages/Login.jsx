@@ -78,10 +78,7 @@ const Link = styled.a`
 `;
 
 const Login = () => {
-  // const navigate = useNavigate();
-  // const handleClick = () => {
-  //   navigate("/");
-  // };
+  
 
   const [loginvalues, setLoginvalues] = useState({
     userid: "",

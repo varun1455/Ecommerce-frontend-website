@@ -1,107 +1,107 @@
-
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import Footer from '../components/Footer';
-import Newsletter from '../components/Newsletter';
-import Products from '../components/Products';
-import Anouncement from './Anouncement';
-import Navbar from './Navbar';
-
+import React, { useState} from "react";
+import styled from "styled-components";
+import Footer from "../components/Footer";
+import Newsletter from "../components/Newsletter";
+import Products from "../components/Products";
+import Anouncement from "../components/Anouncement";
+import Navbar from "../components/Navbar";
 
 const Container = styled.div``;
-const Title = styled.h1`
-margin: 20px;
-`;
+
 const FilterContainer = styled.div`
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 const Filter = styled.div`
-margin: 20px;
+  margin: 20px;
 `;
 
 const FilterText = styled.span`
- font-weight: 600;
- font-size: 20px;
- margin-right: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 20px;
 `;
 
-
 const Select = styled.select`
-margin-right: 20px;
-padding: 10px;`;
+  margin-right: 20px;
+  padding: 10px;
+`;
 const Option = styled.option``;
 
 const ProductList = () => {
-  // const location = URLSearchParams
-  // const cat = location.pathname.split("/")[2];
-  const [filter, setFilters] = useState({});
-  // const [sort, setSort] = useState('Newest');
-  const handleFilters = (e) =>{
-    const value = e.target.value;
-    setFilters({
-      ...filter,
-      [e.target.name]: value,
-    })
+  const options = [
+    "Color",
+    "Red",
+    "Blue",
+    "Black",
+    "Brown",
+    "Green",
+    "Yellow",
+    "White",
+    "Pink",
+  ];
 
-    // setSort({
-    //   // ...sort,
-    //   [e.target.name]:value,
-    // })
-  }
-  console.log(filter);
+  const sizeoptions = ["size", "X", "M", "L", "XL", "XXL"];
+
+  const priceOptions = ["Select Order", "ASC", "DESC"];
+
+  const [filterColor, setFilterColor] = useState("color");
+  const [filterSize, setFilterSize] = useState("size");
+  const [filterPrice, setFilterPrice] = useState("select Order");
+
+  const handleFilterColor = (e) => {
+    setFilterColor(e.target.value);
+  };
+
+  const handleSizeFilter = (e) => {
+    setFilterSize(e.target.value);
+  };
+
+  const handlePriceFilter = (e) => {
+    setFilterPrice(e.target.value);
+  };
+
+
+
+
+    
   return (
     <Container>
-        <Anouncement/>
-      <Navbar/>
-      <Title></Title>
-      <FilterContainer>
-        <Filter><FilterText>Filter Products:</FilterText>
-        <Select name='color' onChange={handleFilters}>
-            <Option selected>
-                color
-            </Option>
-            <Option>Red</Option>
-            <Option>Blue</Option>
-            <Option>Black</Option>
-            <Option>Yellow</Option>
-            <Option>White</Option>
-            <Option>Green</Option>
-            <Option>Pink</Option>
-            <Option>Brown</Option>
-        </Select>
-        <Select name='size' onChange={handleFilters}>
-            <Option selected>
-                Size
-            </Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
-            <Option>XXL</Option>
-        </Select>
-        
-        </Filter>
-        {/* <Filter><FilterText>Sort Products:</FilterText>
-        <Select name='price' onChange={handleFilters}>
-            <Option value="newest">
-                Newest
-            </Option>
-            <Option value="asc">price (asc)</Option> 
-             <Option value="desc">price (desc)</Option>
-            
-            {/* // <Option >price (asc)</Option>
-            // <Option >price (desc)</Option> */}
-            
-        {/* </Select> */}
-        
-        {/* </Filter> */} 
-      </FilterContainer>
-      <Products filters={filter} />
-      <Newsletter/>
-      <Footer/>
-    </Container>
-  )
-}
+      <Anouncement />
+      <Navbar />
 
-export default ProductList
+      <FilterContainer>
+        <Filter>
+          <FilterText>Filter Products:</FilterText>
+          <Select name="color" value={filterColor} onChange={handleFilterColor}>
+            {options.map((option) => (
+              <Option>{option}</Option>
+            ))}
+          </Select>
+
+          <Select name="size" value={filterSize} onChange={handleSizeFilter}>
+            {sizeoptions.map((option) => (
+              <Option>{option}</Option>
+            ))}
+          </Select>
+        </Filter>
+        
+        <Filter>
+          <FilterText>Sort Products:</FilterText>
+          <Select name="price" value={filterPrice} onChange={handlePriceFilter}>
+            {priceOptions.map((price) => (
+              <Option>{price}</Option>
+            ))}
+          </Select>
+        </Filter>
+      </FilterContainer>
+      <Products  />
+
+      
+      <Newsletter />
+      <Footer />
+    </Container>
+  );
+};
+
+export default ProductList;

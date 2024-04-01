@@ -1,9 +1,8 @@
 
-import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import {Routes, Route, useNavigate} from 'react-router-dom';
-import { useState } from "react";
+import { useNavigate} from 'react-router-dom';
+
 
 const Container = styled.div`
   height: 66px;
@@ -20,7 +19,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
 `;
-const Right = styled.div`
+const Right = styled.div` 
   flex: 1;
   display: flex;
   align-items: center;
@@ -72,22 +71,7 @@ const Menuitem = styled.div`
 const Navbar = () => {
 
   const navigate = useNavigate();
-  // const [text, setText] = useState("view menu");
-  // const handleClick = () =>{
 
-    
-  //     if(text==="view menu"){
-  //       setText("Back") ;
-  //       navigate('/ProductList')   ;
-  //     }
-  //     else if(text==="Back"){
-  //       setText("view menu") ;
-  //       navigate('/')   ;
-  //     }
-    
-    
-   
-  // }
 
   const handlebutton = (type) => {
     if(type==="register"){
@@ -108,13 +92,8 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          
-        
-            
-            
-            <Button >Menu</Button>
-         
-        </Left>
+              <Button >Menu</Button>
+          </Left>
         <Center>
           <Logo>FASHION MART</Logo>
         </Center>

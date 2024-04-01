@@ -3,10 +3,9 @@ import Categories from '../components/Categories'
 import Footer from '../components/Footer'
 import Itemlist from '../components/Itemlist'
 import Newsletter from '../components/Newsletter'
-// import Products from '../components/Products'
 import Slider from '../components/Slider'
-import Anouncement from './Anouncement'
-import Navbar from './Navbar'
+import Anouncement from '../components/Anouncement'
+import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (
@@ -15,7 +14,6 @@ const Home = () => {
       <Navbar/>
       <Slider/>
       <Categories/>
-      {/* <Products/> */}
       <Itemlist/>
       <Newsletter/>
       <Footer/>
